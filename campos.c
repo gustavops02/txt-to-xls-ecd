@@ -115,6 +115,36 @@ struct REGISTRO_0000 registraEmStruct0000(char* linha) {
     return registro;
 }
 
+struct REGISTRO_0001 registraEmStruct0001(char* linha) {
+    struct REGISTRO_0001 registro;
+
+    char* campo;
+
+    int campoIndex = 0;
+    char* linhaCopia = strdup(linha);
+    char* cursor = linhaCopia;
+
+    while ((campo = cststrsep(&cursor, "|")) != NULL) {
+        switch (campoIndex) {
+            case 0: 
+                break;
+            case 1:
+                strncpy(registro.codigo, campo, sizeof(registro.codigo) - 1);
+                registro.codigo[sizeof(registro.codigo) - 1] = '\0';
+                break;
+            case 2:
+                registro.ind_dad = campo[0];
+                break;
+            default:
+                break;
+        }
+        campoIndex++;
+    }
+
+    free(linhaCopia);
+    return registro;
+}
+
 char* cststrsep(char** stringp, const char* delim) {
     char* inicio = *stringp;
     if (inicio == NULL) {
@@ -128,8 +158,6 @@ char* cststrsep(char** stringp, const char* delim) {
     }
 
     *p = '\0';
-
     *stringp = p + 1;
-
     return inicio;
 }

@@ -5,6 +5,8 @@
 #define BLOCO_0000_QTD 23
 
 struct REGISTRO_0000 registraEmStruct0000(char* linha);
+struct REGISTRO_0001 registraEmStruct0001(char* linha);
+
 char* cststrsep(char** stringp, const char* delim);
 
 struct REGISTRO_0000 {
@@ -35,12 +37,12 @@ struct REGISTRO_0000 {
 };
 
 struct REGISTRO_0001 {
-	char codigo[4];
+	char codigo[5];
 	char ind_dad;
 };
 
 struct REGISTRO_0007 {
-	char codigo[4];
+	char codigo[5];
 	char cod_ent_ref[5];
 	char cod_inscr[12];
 };

@@ -1,5 +1,2 @@
-﻿  campos.c
-  main.c
-D:\tmp\faculdade\software-em-c\oficina\TxtToExcelFile\main.c(67,26): warning C4133: 'função': tipos incompatíveis - de 'char *' para 'const wchar_t *'
-  Gerando Código...
+﻿  main.c
   TxtToExcelFile.vcxproj -> D:\tmp\faculdade\software-em-c\oficina\TxtToExcelFile\x64\Debug\TxtToExcelFile.exe
