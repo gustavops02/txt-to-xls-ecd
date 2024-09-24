@@ -6,6 +6,44 @@
 
 struct REGISTRO_0000 registraEmStruct0000(char* linha);
 struct REGISTRO_0001 registraEmStruct0001(char* linha);
+struct REGISTRO_0007 registraEmStruct0007(char* linha);
+struct REGISTRO_0990 registraEmStruct0990(char* linha);
+struct REGISTRO_I001 registraEmStructI001(char* linha);
+struct REGISTRO_I010 registraEmStructI010(char* linha);
+struct REGISTRO_I030 registraEmStructI030(char* linha);
+struct REGISTRO_I050 registraEmStructI050(char* linha);
+struct REGISTRO_I051 registraEmStructI051(char* linha);
+struct REGISTRO_I052 registraEmStructI052(char* linha);
+struct REGISTRO_I075 registraEmStructI075(char* linha);
+struct REGISTRO_I150 registraEmStructI150(char* linha);
+struct REGISTRO_I155 registraEmStructI155(char* linha);
+struct REGISTRO_I200 registraEmStructI200(char* linha);
+struct REGISTRO_I250 registraEmStructI250(char* linha);
+struct REGISTRO_I350 registraEmStructI350(char* linha);
+struct REGISTRO_I355 registraEmStructI355(char* linha);
+struct REGISTRO_I990 registraEmStructI990(char* linha);
+struct REGISTRO_J001 registraEmStructJ001(char* linha);
+struct REGISTRO_J005 registraEmStructJ005(char* linha);
+struct REGISTRO_J100 registraEmStructJ100(char* linha);
+struct REGISTRO_J150 registraEmStructJ150(char* linha);
+struct REGISTRO_J900 registraEmStructJ900(char* linha);
+struct REGISTRO_J990 registraEmStructJ990(char* linha);
+struct REGISTRO_9001 registraEmStruct9001(char* linha);
+struct REGISTRO_9900 registraEmStruct9900(char* linha);
+struct REGISTRO_9999 registraEmStruct9999(char* linha);
+
+void adicionarRegistroI051(struct REGISTRO_I051** lista, int* tamanho, struct REGISTRO_I051 nvRegistro);
+void adicionarRegistroI050(struct REGISTRO_I050** lista, int* tamanho, struct REGISTRO_I050 nvRegistro);
+void adicionarRegistroI052(struct REGISTRO_I052** lista, int* tamanho, struct REGISTRO_I052 nvRegistro);
+void adicionarRegistroI075(struct REGISTRO_I075** lista, int* tamanho, struct REGISTRO_I075 nvRegistro);
+void adicionarRegistroI150(struct REGISTRO_I150** lista, int* tamanho, struct REGISTRO_I150 nvRegistro);
+void adicionarRegistroI155(struct REGISTRO_I155** lista, int* tamanho, struct REGISTRO_I155 nvRegistro);
+void adicionarRegistroI200(struct REGISTRO_I200** lista, int* tamanho, struct REGISTRO_I200 nvRegistro);
+void adicionarRegistroI250(struct REGISTRO_I250** lista, int* tamanho, struct REGISTRO_I250 nvRegistro);
+void adicionarRegistroI355(struct REGISTRO_I355** lista, int* tamanho, struct REGISTRO_I355 nvRegistro);
+void adicionarRegistroJ100(struct REGISTRO_J100** lista, int* tamanho, struct REGISTRO_J100 nvRegistro);
+void adicionarRegistroJ150(struct REGISTRO_J150** lista, int* tamanho, struct REGISTRO_J150 nvRegistro);
+void adicionarRegistro9900(struct REGISTRO_9900** lista, int* tamanho, struct REGISTRO_9900 nvRegistro);
 
 char* cststrsep(char** stringp, const char* delim);
 
@@ -43,8 +81,8 @@ struct REGISTRO_0001 {
 
 struct REGISTRO_0007 {
 	char codigo[5];
-	char cod_ent_ref[5];
-	char cod_inscr[12];
+	char cod_ent_ref[7];
+	char cod_inscr[16];
 };
 
 struct REGISTRO_0020 {
@@ -88,7 +126,7 @@ struct REGISTRO_0180 {
 };
 
 struct REGISTRO_0990 {
-	char codigo[4];
+	char codigo[5];
 	int qtd_lin; 
 };
 
@@ -185,13 +223,13 @@ struct REGISTRO_C990 {
 };
 
 struct REGISTRO_I001 {
-	char codigo[4];
+	char codigo[5];
 	char ind_dad;
 };
 
 struct REGISTRO_I010 {
-	char codigo[4];
-	char ind_esc;
+	char codigo[5];
+	char ind_esc[2];
 	char cod_ver_lc[9];
 };
 
@@ -218,14 +256,14 @@ struct REGISTRO_I020 {
 };
 
 struct REGISTRO_I030 {
-	char codigo[4];
-	char dnrc_abert[17];
+	char codigo[5];
+	char dnrc_abert[19];
 	int num_ord;
 	char nat_livr[80];
 	int qtd_lin;
 	char nome[150];
-	char nire[11];
-	char cnpj[14];
+	char nire[13];
+	char cnpj[15];
 	char dt_arq[10];
 	char dt_arq_conv[10];
 	char desc_mun[40];
@@ -235,9 +273,9 @@ struct REGISTRO_I030 {
 struct REGISTRO_I050 {
 	char codigo[5];
 	char dt_alt[10];
-	char cod_nat[3];
-	char ind_cta;
-	int nivel;
+	char cod_nat[5];
+	char ind_cta[2];
+	char nivel[2];
 	char cod_cta[20];
 	char cod_cta_sup[45];
 	char cta[40];
@@ -245,8 +283,8 @@ struct REGISTRO_I050 {
 
 struct REGISTRO_I051 {
 	char codigo[5];
-	char cod_ccus[20];
-	char cod_cta_red[35];
+	char cod_ccus[25];
+	char cod_cta_ref[40];
 };
 
 struct REGISTRO_I052 {
@@ -285,18 +323,18 @@ struct REGISTRO_I155 {
 	char codigo[5];
 	char cod_cta[19];
 	char cod_ccus[19];
-	double vl_saldo_ini;
-	char ind_dc_ini;
-	double vl_deb;
-	double vl_cred;
-	double vl_sld_fin;
-	char ind_dc_fin;	
-	double vl_sld_ini_mf;
-	double ind_dc_ini_mf;
-	double vl_deb_mf;
-	double vl_cred_mf;
-	double vl_sld_fin_mf;
-	char ind_dc_fin_mf;
+	char vl_saldo_ini[19];
+	char ind_dc_ini[2];
+	char vl_deb[19];
+	char vl_cred[19];
+	char vl_sld_fin[19];
+	char ind_dc_fin[2];	
+	char vl_sld_ini_mf[19];
+	char ind_dc_ini_mf[19];
+	char vl_deb_mf[19];
+	char vl_cred_mf[19];
+	char vl_sld_fin_mf[19];
+	char ind_dc_fin_mf[2];
 };
 
 struct REGISTRO_I157 {
@@ -309,25 +347,25 @@ struct REGISTRO_I157 {
 	char ind_dc_ini_mf;
 };
 
-struct REIGISTRO_I200 {
+struct REGISTRO_I200 {
 	char codigo[5];
 	char num_lcto[20];
 	char dt_lcto[10];
-	double vl_lcto;
-	char ind_lcto;
+	char vl_lcto[19];
+	char ind_lcto[2];
 	char dt_lcto_ext[10];
-	double vl_lcto_mf;
+	char vl_lcto_mf[19];
 };
 
 struct REGISTRO_I250 {
 	char codigo[5];
 	char cod_cta[19];
 	char cod_ccus[19];
-	double vl_dc;
-	char ind_dc;
+	char vl_dc[19];
+	char ind_dc[2];
 	char num_arq[29];
 	char cod_hist_pad[20];
-	char hist[65535];
+	char hist[256];
 	char cod_part[45];
 };
 
@@ -355,10 +393,10 @@ struct REGISTRO_I355 {
 	char codigo[5];
 	char cod_cta[19];
 	char cod_ccus[19];
-	double vl_cta;
-	char ind_dc;
-	double vl_cta_mf;
-	char ind_dc_mf;
+	char vl_cta[19];
+	char ind_dc[2];
+	char vl_cta_mf[19];
+	char ind_dc_mf[19];
 };
 
 struct REGISTRO_I500 {
@@ -393,45 +431,45 @@ struct REGISTRO_I990 {
 
 struct REGISTRO_J001 {
 	char codigo[5];
-	char ind_dad;
+	char ind_dad[2];
 };
 
 struct REGISTRO_J005 {
 	char codigo[5];
 	char dt_ini[10];
 	char dt_fin[10];
-	char id_dem;
-	char cab_dem[65535];
+	char id_dem[2];
+	char cab_dem[255];
 };
 
 struct REGISTRO_J100 {
 	char codigo[5];
 	char cod_agl[200];
-	char ind_cod_agl;
-	int nivel_agl;
+	char ind_cod_agl[2];
+	char nivel_agl[5];
 	char cod_agl_sup[50];
-	char ind_grp_bal;
+	char ind_grp_bal[2];
 	char descr_cod_agl[50];
-	double vl_cta_ini;
-	char ind_dc_cta_ini;
-	double vl_cta_fin;
-	char ind_dc_cta_fin;
+	char vl_cta_ini[19];
+	char ind_dc_cta_ini[2];
+	char vl_cta_fin[19];
+	char ind_dc_cta_fin[2];
 	char nota_exp_ref[12];
 };
 
 struct REGISTRO_J150 {
 	char codigo[5];
-	int nu_ordem;
+	char nu_ordem[10];
 	char cod_agl[19];
-	char ind_cod_agl;
-	int nivel_agl;
+	char ind_cod_agl[2];
+	char nivel_agl[5];
 	char cod_agl_sup[19];
 	char descr_cod_agl[20];
-	double vl_cta_ini;
-	char ind_dc_cta_ini;
-	double vl_cta_fin;
-	char ind_dc_cta_fin;
-	char ind_grp_dre;
+	char vl_cta_ini[19];
+	char ind_dc_cta_ini[2];
+	char vl_cta_fin[19];
+	char ind_dc_cta_fin[2];
+	char ind_grp_dre[2];
 	char nota_exp_ref[12];
 };
 
@@ -476,10 +514,10 @@ struct REGISTRO_J801 {
 struct REGISTRO_J900 {
 	char codigo[5];
 	char dnrc_encer[30];
-	int num_ord;
+	char num_ord[19];
 	char nat_livro[80];
 	char nome[90];
-	int qtd_lin;
+	char qtd_lin[10];
 	char dt_ini_escr[10];
 	char dt_fin_escr[10];
 };
@@ -522,7 +560,7 @@ struct REGISTRO_J935 {
 
 struct REGISTRO_J990 {
 	char codigo[5];
-	int qtd_lin_j;
+	char qtd_lin_j[10];
 };
 
 struct REGISTRO_K001 {
@@ -610,12 +648,13 @@ struct REGISTRO_K990 {
 };
 struct REGISTRO_9001 {
 	char codigo[5];
-	char ind_dad;
+	char ind_dad[2];
 };
+
 struct REGISTRO_9900 {
 	char codigo[5];
-	char reg_blc[6];
-	int qtd_reg_blc;
+	char reg_blc[5];
+	char qtd_reg_blc[4];
 };
 
 struct REGISTRO_9990 {
@@ -623,9 +662,9 @@ struct REGISTRO_9990 {
 	int qtd_lin_9;
 };
 
-struct Registro_9999 {
+struct REGISTRO_9999 {
 	char codigo[5];
-	int qtd_lin;
+	char qtd_lin[5];
 };
 
 #endif
